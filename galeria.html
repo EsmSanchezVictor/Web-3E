@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3Esfera | Galería</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-glow">
+        <div class="glow-spot blue-top"></div>
+        <div class="glow-spot orange-right"></div>
+    </div>
+
+    <nav class="navbar fade-in">
+        <div class="logo-container">
+            <a href="index.html"><img src="./assets/logo colores violeta.png" alt="3Esfera Logo" class="logo-img"></a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="galeria.html" class="active">Galería</a>
+            <a href="contacto.html">Contacto</a>
+            <!-- <button id="login-btn" class="nav-btn-glow">Acceso Alumnos</button> -->
+        </div>
+    </nav>
+
+    <section class="gallery-page-section page-padding">
+        <!-- <h3 class="section-title center scroll-animate" style="margin-bottom:10px;">NUESTROS TRABAJOS</h3> -->
+        
+        <div class="main-viewer scroll-animate" onclick="openModal()">
+            <img id="main-display" src="./assets/foto1.jpg" onerror="this.src='https://placehold.co/800x500/111/333?text=Selecciona+una+imagen'" alt="Visor Principal">
+            <div class="viewer-overlay">
+                <h3 id="viewer-title">Haz clic para ampliar</h3>
+            </div>
+            <div class="zoom-icon"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="carousel-3d-wrapper scroll-animate delay-2" id="carouselWrapper">
+            
+            <button class="side-arrow left" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+
+            <div class="carousel-3d-container">
+                <div class="carousel-3d" id="carousel3D">
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_b.jpg', 'Campus Party: Panel sobre diseño para emprendimientos de la economía del conocimiento.')"><img src="./galeria/Foto_b.jpg"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_ah.jpg', 'ConerTech: Participación como jurados de proyectos Hackaton.')"><img src="./galeria/Foto_ah.jpg"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_bf.jpeg', 'Foto 1')"><img src="./galeria/Foto_bf.jpeg"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_e.jpg', 'Club de Emprendedores: Curso Emprendedurismo, Municipio de Crespo')"><img src="./galeria/Foto_e.jpg"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_bg.jpg', 'Reconocimiento MinCyt de Nación, Agencia IDI - Programa Tecnotecas')"><img src="./galeria/Foto_bg.jpg"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_az.jpg', 'Foto 1')"><img src="./galeria/Foto_az.jpg"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_ai.jpg', 'ConerTech: Participación como jurados de proyectos Hackaton.')"><img src="./galeria/Foto_ai.jpg"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_c.jpg', '')"><img src="./galeria/Foto_c.jpg"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_ay.jpg', 'Club de Emprendedores: Curso Emprendedurismo, Municipios de Aranguren y Hernandez')"><img src="./galeria/Foto_ay.jpg"></div>                                        
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_u.jpg', 'Jornada mujeres en acción Municipalidad Maria Grande teller de empredndedurismo')"><img src="./galeria/Foto_u.jpg"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_ao.jpeg', 'Foto 1')"><img src="./galeria/Foto_ao.jpeg"></div>                                        
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_x3.jpeg', 'Foto 1')"><img src="./galeria/Foto_x3.jpeg"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_be.jpeg', 'Foto 1')"><img src="./galeria/Foto_be.jpeg"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_x.jpg', 'Foto 1')"><img src="./galeria/Foto_x.jpg"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_w.jpg', 'Foto 1')"><img src="./galeria/Foto_w.jpg"></div>                                                                                
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_1.jpg', 'Foto 1')"><img src="./galeria/Foto_1.jpg"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_ae.jpg', 'Foto 1')"><img src="./galeria/Foto_ae.jpg"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_an.jpeg', 'Foto 1')"><img src="./galeria/Foto_an.jpeg"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_x5.jpg', 'Foto 1')"><img src="./galeria/Foto_x5.jpg"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_x6.jpeg', 'Foto 1')"><img src="./galeria/Foto_x6.jpeg"></div>                                                                                                    
+                </div>
+            </div>
+
+            <button class="side-arrow right" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            
+        </div>
+        
+        <p class="gallery-instruction" style="margin-top: -20px; margin-bottom: 50px; opacity: 0.7;">
+            <i class="fas fa-hand-pointer"></i> Arrastra o usa las flechas para girar
+        </p>
+    </section>
+
+    <div id="imageModal" class="modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="logo-container footer-logo">
+                    <img src="./assets/logo colores violeta.png" alt="3Esfera Logo" class="logo-img">
+                    <!-- <span class="logo-text">3ESFERA</span> -->
+                </div>
+                <p class="footer-desc">Construyendo futuro.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Conectate</h4>
+                <div class="social-links">
+                    <a href="https://facebook.com/3esferaparana" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/esfera_3" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/tresesfera" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <ul class="contact-list">
+                    <li><i class="fab fa-whatsapp"></i> 343-4675083</li>
+                    <li><i class="fas fa-envelope"></i> contacto@3esfera.com.ar</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 3Esfera.</p></div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
