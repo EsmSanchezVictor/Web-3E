@@ -791,6 +791,62 @@ body {
 }
 .mt-20 { margin-top: 20px; }
 
+/* =========================================
+   NUEVAS TARJETAS DE CONTACTO Y MODAL
+   ========================================= */
+
+/* Caja que contiene las tarjetas */
+.contact-actions-box {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+}
+.action-cards-container {
+    display: flex; gap: 20px; width: 200%; justify-content: center; flex-wrap: wrap;
+}
+
+/* Diseño de cada tarjeta */
+.action-card {
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 15px; padding: 20px; text-align: center;
+    width: calc(50% - 10px); min-width: 200px;
+    transition: 0.3s;
+}
+.action-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.04); }
+
+/* Imagen dentro de la tarjeta */
+.action-img {
+    width: 101%; height: 230px; object-fit: cover;
+    border-radius: 10px; margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Botones */
+.action-btn {
+    width: 100%; padding: 12px; border-radius: 30px; border: none; font-weight: 600; cursor: pointer; color: #fff; transition: 0.3s;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.email-btn { background: transparent; border: 2px solid var(--neon-purple); }
+.email-btn:hover { background: var(--neon-purple); box-shadow: 0 0 15px var(--neon-purple); }
+
+.wa-btn { background: transparent; border: 2px solid var(--neon-green); }
+.wa-btn:hover { background: var(--neon-green); color: #000; box-shadow: 0 0 15px var(--neon-green); }
+
+/* Ventana Emergente de Correo (Dark Mode) */
+.contact-modal-content {
+    background: #0d0d0d !important; /* Fondo ultra oscuro */
+    padding: 40px !important;
+    border-radius: 15px;
+    border: 1px solid rgba(168, 85, 247, 0.3) !important; /* Borde sutil violeta */
+    max-width: 500px !important;
+    width: 90%;
+    text-align: left;
+    box-shadow: 0 0 40px rgba(0,0,0,0.8), 0 0 20px rgba(168, 85, 247, 0.1) !important;
+}
+
+/* responsive tarjetas */
+@media (max-width: 768px) {
+    .action-card { width: 100%; }
+}
+
 /* === PÁGINA CONTACTO ESPECÍFICA === */
 .contact-wrapper {
     display: flex; gap: 50px; justify-content: center; max-width: 1100px; margin: 50px auto;
