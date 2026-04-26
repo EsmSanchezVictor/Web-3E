@@ -184,4 +184,19 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+    
 });
+// Lógica para el Menú Hamburguesa en móviles
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.getElementById('navLinks');
+
+if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        
+        // Cambia el icono de hamburguesa por una X al abrir
+        const icon = mobileMenuBtn.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+}
