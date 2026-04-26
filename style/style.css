@@ -116,7 +116,7 @@ html, body { background-color: var(--bg-dark); color: var(--text-white); font-fa
 .logos-section { margin-top: 60px; text-align: center; width: 100%; overflow: hidden; }
 .logos-section h4 { color: var(--text-gray); font-weight: 500; margin-bottom: 30px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; }
 .logos-carousel { width: 100%; overflow: hidden; position: relative; -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); padding: 10px 0; }
-.logos-track { display: flex; gap: 40px; width: max-content; animation: scroll-logos 20s linear infinite; }
+.logos-track { display: flex; gap: 40px; width: max-content; animation: scroll-logos 40s linear infinite; }
 .logos-track:hover { animation-play-state: paused; }
 .logo-placeholder { flex-shrink: 0; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 15px 30px; border-radius: 8px; color: var(--text-gray); display: flex; align-items: center; justify-content: center; min-width: 200px; transition: 0.3s ease; }
 .logo-placeholder:hover { background: rgba(255, 255, 255, 0.08); color: var(--text-white); border-color: rgba(168, 85, 247, 0.5); transform: translateY(-2px); }
