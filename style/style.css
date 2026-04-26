@@ -1092,3 +1092,35 @@ body {
         display: none;
     }
 }
+/* =========================================
+   Ajustes para Monitores de Baja Altura (Laptops)
+   ========================================= */
+@media (max-height: 850px) {
+    /* Achicamos los "colchones" de espacio vacío arriba y abajo */
+    .hero-section {
+        padding-top: 60px; 
+        padding-bottom: 70px;
+    }
+    
+    /* Reducimos apenas el tamaño del logo para que no ocupe toda la pantalla */
+    .logo-anim-container, 
+    .hero-main-logo {
+        max-width: 450px !important; 
+    }
+    
+    /* Subimos un poquito la flecha para que no quede al ras del monitor */
+    .scroll-down-arrow {
+        bottom: 15px !important;
+    }
+}
+
+@media (max-height: 700px) {
+    /* Para pantallas aún más chiquitas, compactamos más el texto */
+    .hero-title {
+        margin-bottom: 15px;
+    }
+    .logo-anim-container, 
+    .hero-main-logo {
+        max-width: 380px !important; 
+    }
+}
