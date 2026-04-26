@@ -195,10 +195,17 @@ html, body { background-color: var(--bg-dark); color: var(--text-white); font-fa
 .action-cards-container { display: flex; gap: 20px; width: 100%; justify-content: center; flex-wrap: wrap; }
 .action-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; text-align: center; width: calc(50% - 10px); min-width: 200px; transition: 0.3s; }
 .action-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.04); }
-.action-img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); 
- image-rendering: high-quality; /* Le pide al navegador el mejor algoritmo */
-transform: translateZ(0); /* Fuerza a la placa de video (GPU) a procesar la imagen */
-backface-visibility: hidden; /* Evita bordes borrosos al achicar */ 
+.action-img { 
+    width: 100%; 
+    height: 160px; /* Le damos una altura fija y delicada */
+    object-fit: contain; /* ¡LA MAGIA! Le dice que muestre al robot entero sin estirarlo ni cortarlo */
+    margin-bottom: 20px; 
+    border: none; /* Le sacamos el marco para que parezca que flota */
+    background: transparent;
+    
+    /* Mantenemos la alta calidad */
+    image-rendering: high-quality; 
+    transform: translateZ(0); 
 }
 .action-btn { width: 100%; padding: 12px; border-radius: 30px; border: none; font-weight: 600; cursor: pointer; color: #fff; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
 .email-btn { background: transparent; border: 2px solid var(--neon-purple); }
