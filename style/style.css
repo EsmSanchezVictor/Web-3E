@@ -286,6 +286,31 @@ html, body { background-color: var(--bg-dark); color: var(--text-white); font-fa
     .courses-section, .impact-section, .about-section, .gallery-section, .contact-page-section { padding: 120px 20px 60px 20px; }
     .main-viewer { height: 300px; }
     .action-card { width: 100%; }
+    /* =========================================
+    Barra de desplazamiento delicada (Solo Móvil)
+       ========================================= */
+    ::-webkit-scrollbar {
+        width: 4px; /* Súper finita y elegante */
+        background-color: var(--bg-dark);
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.02); /* Fondo casi invisible */
+        border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: rgba(168, 85, 247, 0.4); /* Violeta translúcido */
+        border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(168, 85, 247, 0.8); /* Brilla al tocarla */
+    }
+    /* Ocultar flechas de salto en celular */
+    .scroll-down-arrow {
+        display: none !important;
+    }
 }
 
 @media (max-height: 850px) {
