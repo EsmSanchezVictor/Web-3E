@@ -228,9 +228,46 @@ body {
 }
 /* Para que en celulares no se vea tan grande el subtítulo */
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 1.2rem; 
+    /* Mostramos el botón de hamburguesa */
+    .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text-white);
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1100;
     }
+
+    /* Convertimos el menú en una persiana vertical */
+    .nav-links {
+        display: none; /* Se mantiene oculto por defecto */
+        position: absolute;
+        top: 100%; /* Aparece justo debajo del header */
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(168, 85, 247, 0.3);
+    }
+
+    /* Clase que activaremos con JavaScript para mostrarlo */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Ocultamos el botón en pantallas grandes */
+.mobile-menu-btn {
+    display: none;
 }
 .text-glow-blue {
     color: var(--text-white);
