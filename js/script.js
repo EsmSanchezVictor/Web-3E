@@ -200,15 +200,33 @@ document.addEventListener('DOMContentLoaded', () => {
             icon.classList.toggle('fa-times');
         });
     }
-    // 10. OCULTAR INDICADOR LATERAL AL HACER SCROLL
+// 10. INDICADOR LATERAL: OCULTAR AL SCROLLEAR, REAPARECER, Y ESCONDER AL FINAL
     const scrollIndicator = document.getElementById('scrollIndicator');
+    let scrollTimeout;
+
     if (scrollIndicator) {
         window.addEventListener('scroll', () => {
-            // Si baja más de 150 píxeles, se vuelve transparente
-            if (window.scrollY > 150) {
+            // 1. Calculamos si el usuario llegó al final de la página (con 20px de margen de seguridad)
+            const isAtBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 20);
+
+            // 2. Limpiamos el temporizador siempre que haya movimiento
+            clearTimeout(scrollTimeout);
+
+            if (isAtBottom) {
+                // Si tocó el fondo, apagamos la barrita para siempre y no dejamos que reaparezca
                 scrollIndicator.style.opacity = '0';
             } else {
-                scrollIndicator.style.opacity = '1';
+                // Si NO está en el fondo, aplicamos la lógica normal de desaparecer al moverse
+                if (window.scrollY > 150) {
+                    scrollIndicator.style.opacity = '0';
+                } else {
+                    scrollIndicator.style.opacity = '1';
+                }
+
+                // Y volvemos a iniciar la cuenta regresiva de 5 segundos para que reaparezca
+                scrollTimeout = setTimeout(() => {
+                    scrollIndicator.style.opacity = '1';
+                }, 5000);
             }
         });
     }
