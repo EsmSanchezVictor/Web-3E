@@ -222,7 +222,16 @@ html, body { background-color: var(--bg-dark); color: var(--text-white); font-fa
 .captcha-logo { height: 30px; margin-left: auto; opacity: 0.5; }
 .submit-btn { width: 100%; padding: 15px; background: transparent; color: #fff; border: 2px solid var(--neon-green); border-radius: 50px; font-weight: 700; cursor: pointer; letter-spacing: 1px; transition: 0.3s; }
 .submit-btn:hover { background: var(--neon-green); color: #000; box-shadow: 0 0 20px var(--neon-green); }
-
+/* Centrado del título antes del footer */
+.pre-footer-title {
+    display: flex;
+    justify-content: center; /* Lo centra horizontalmente */
+    align-items: center;
+    text-align: center; /* Centra el texto */
+    width: 100%;
+    padding: 80px 20px; /* Le da un buen margen arriba y abajo para que respire */
+    margin: 0 auto;
+}
 /* =========================================
    10. FOOTER
    ========================================= */
@@ -274,7 +283,7 @@ html, body { background-color: var(--bg-dark); color: var(--text-white); font-fa
     .about-container, .footer-container, .contact-wrapper { flex-direction: column; }
     .about-image { order: -1; margin-bottom: 30px; }
     .mission-vision-grid { flex-direction: column; }
-    .courses-section, .impact-section, .about-section, .gallery-section, .contact-page-section { padding: 60px 20px; }
+    .courses-section, .impact-section, .about-section, .gallery-section, .contact-page-section { padding: 120px 20px 60px 20px; }
     .main-viewer { height: 300px; }
     .action-card { width: 100%; }
 }
