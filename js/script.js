@@ -184,4 +184,19 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+    // 9. MENÚ HAMBURGUESA PARA MÓVILES
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            // Abre y cierra la persiana del menú
+            navLinks.classList.toggle('active');
+            
+            // Cambia el icono de las 3 rayitas por una "X" y viceversa
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    }
 });
