@@ -152,40 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
             this.src = 'https://placehold.co/600x400/111/333?text=Sin+Imagen';
         });
     });
-    // 8. LOGICA PARA EL MODAL DE CORREO Y BOTON WHATSAPP
-    window.openEmailModal = function() {
-        const modal = document.getElementById('emailModal');
-        if(modal) modal.style.display = 'block';
-    };
-
-    window.closeEmailModal = function() {
-        const modal = document.getElementById('emailModal');
-        if(modal) modal.style.display = 'none';
-    };
-
-    window.sendWhatsApp = function() {
-        // Configuramos el número de 3Esfera (Formato internacional de Argentina: 54 + 9 + codigo de area + numero)
-        const phone = "5493435314141"; 
-        const message = "¡Hola 3Esfera! Me comunico desde la página web, me gustaría hacerles una consulta.";
-        const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-        window.open(url, '_blank');
-    };
-
-    // Cerrar el modal si el usuario hace click afuera de la caja
-    window.addEventListener('click', function(event) {
-        const emailModal = document.getElementById('emailModal');
-        // Usamos también imageModal por si el usuario está en la galería
-        const imageModal = document.getElementById('imageModal'); 
-        
-        if (event.target == emailModal) {
-            closeEmailModal();
-        }
-        if (event.target == imageModal && typeof closeModal === 'function') {
-            closeModal();
-        }
-    });
-    
-});
 // Lógica para el Menú Hamburguesa en móviles
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const navLinks = document.getElementById('navLinks');
@@ -199,4 +165,5 @@ if (mobileMenuBtn && navLinks) {
         icon.classList.toggle('fa-bars');
         icon.classList.toggle('fa-times');
     });
-}
+}    
+});
