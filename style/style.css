@@ -104,9 +104,16 @@ body {
    4. SECCIÓN HERO (Inicio)
    ========================================= */
 .hero-section {
-    min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
     padding: 100px 20px 60px 20px;
     position: relative; /* ¡Muy importante! */
+    /* NUEVO: Corta los láseres para que no ensanchen la pantalla */
+    overflow-x: hidden;
 }
 /* Contenedor Animado (Esto centra la caja completa) */
 /* .logo-anim-container {
