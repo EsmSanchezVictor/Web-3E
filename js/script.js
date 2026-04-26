@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
 
-    
+
     if (mobileMenuBtn && navLinks) {
         mobileMenuBtn.addEventListener('click', () => {
             // Abre y cierra la persiana del menú
@@ -198,6 +198,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const icon = mobileMenuBtn.querySelector('i');
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
+        });
+    }
+    // 10. OCULTAR INDICADOR LATERAL AL HACER SCROLL
+    const scrollIndicator = document.getElementById('scrollIndicator');
+    if (scrollIndicator) {
+        window.addEventListener('scroll', () => {
+            // Si baja más de 150 píxeles, se vuelve transparente
+            if (window.scrollY > 150) {
+                scrollIndicator.style.opacity = '0';
+            } else {
+                scrollIndicator.style.opacity = '1';
+            }
         });
     }
 });

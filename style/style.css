@@ -11,6 +11,8 @@
 
 html, body { background-color: var(--bg-dark); color: var(--text-white); font-family: var(--font-body); overflow-x: hidden; width: 100%; }
 
+
+
 /* =========================================
    2. FONDO AMBIENTAL
    ========================================= */
@@ -287,30 +289,40 @@ html, body { background-color: var(--bg-dark); color: var(--text-white); font-fa
     .main-viewer { height: 300px; }
     .action-card { width: 100%; }
     /* =========================================
-    Barra de desplazamiento delicada (Solo Móvil)
+       Indicador Lateral de Scroll (Solo Móvil)
        ========================================= */
-    ::-webkit-scrollbar {
-        width: 4px; /* Súper finita y elegante */
-        background-color: var(--bg-dark);
+    .mobile-scroll-indicator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        right: 15px;      /* Pegado al borde derecho */
+        bottom: 20%;      /* En la parte baja de la pantalla */
+        z-index: 1000;
+        transition: opacity 0.5s ease;
+        pointer-events: none; /* Evita que moleste si el usuario toca ahí por error */
     }
     
-    ::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.02); /* Fondo casi invisible */
-        border-radius: 10px;
+    .indicator-line {
+        width: 2px;
+        height: 60px;
+        background: linear-gradient(to bottom, transparent, var(--neon-purple));
+        border-radius: 2px;
+        margin-bottom: 5px;
     }
     
-    ::-webkit-scrollbar-thumb {
-        background: rgba(168, 85, 247, 0.4); /* Violeta translúcido */
-        border-radius: 10px;
+    .mobile-scroll-indicator i {
+        color: var(--neon-purple);
+        font-size: 0.9rem;
+        text-shadow: 0 0 10px rgba(168, 85, 247, 0.8);
+        animation: subtleDrop 2s infinite ease-in-out;
     }
     
-    ::-webkit-scrollbar-thumb:hover {
-        background: rgba(168, 85, 247, 0.8); /* Brilla al tocarla */
+    @keyframes subtleDrop {
+        0%, 100% { transform: translateY(0); opacity: 0.5; }
+        50% { transform: translateY(8px); opacity: 1; }
     }
-    /* Ocultar flechas de salto en celular */
-    .scroll-down-arrow {
-        display: none !important;
-    }
+    
 }
 
 @media (max-height: 850px) {
