@@ -7,6 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta property="og:title" content="3Esfera | Hub de Innovación">
+    <meta property="og:description" content="Impulsamos el talento y transformamos el futuro. Conocé nuestros trayectos formativos y servicios.">
+    <meta property="og:image" content="https://3esfera.com.ar/assets/tu-imagen-de-portada.jpg">
+    <meta property="og:url" content="https://3esfera.com.ar/">
+    <link rel="icon" type="image/png" href="./assets/logo_youtube_3esfera.png">
 </head>
 <body>
     <div class="background-glow">
@@ -36,7 +41,7 @@
 
     <section class="contact-page-section page-padding">
         
-        <h3 class="section-title center scroll-animate">CONTACTANOS</h3>
+        <h3 class="section-title center scroll-animate">CONTÁCTANOS</h3>
         
         <div class="contact-wrapper">
             <div class="contact-info-box scroll-animate">
@@ -98,20 +103,20 @@
     <div id="emailModal" class="modal">
         <div class="modal-content contact-modal-content">
             <span class="close-modal" onclick="closeEmailModal()">&times;</span>
-            <h3 style="color: var(--neon-purple); margin-bottom: 20px; font-family: var(--font-main);">Envianos un mensaje</h3>
+            <h3 style="color: var(--neon-purple); margin-bottom: 20px; font-family: var(--font-main);">Enviános un mensaje</h3>
             
-            <form id="contactForm">
+            <form id="contactForm" action="https://formspree.io/f/mgorbodp" method="POST">
                 <div class="form-group">
                     <label for="name">Nombre Completo</label>
-                    <input type="text" id="name" placeholder="Tu nombre" required>
+                    <input type="text" id="name" name="name" placeholder="Tu nombre" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Correo Electrónico</label>
-                    <input type="email" id="email" placeholder="tucorreo@ejemplo.com" required>
+                    <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
                 </div>
                 <div class="form-group">
                     <label for="message">Mensaje</label>
-                    <textarea id="message" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                    <textarea id="message" name="message" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
                 </div>
 
                 <div class="captcha-container">

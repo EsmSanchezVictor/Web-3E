@@ -122,26 +122,59 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.key === "Escape") window.closeModal();
     });
 
-    // 6. FORMULARIO Y CAPTCHA (Para la página de Contacto)
+// 6. FORMULARIO Y CAPTCHA (Envío en segundo plano sin salir de la web)
     window.toggleCaptcha = function(element) {
         element.classList.toggle('checked');
     };
     
     const contactForm = document.getElementById('contactForm');
     if(contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Frenamos la recarga de la página SIEMPRE
+            
             const captcha = document.querySelector('.fake-captcha');
             
-            // Validación simple del captcha
+            // 1. Validar nuestro Captcha visual
             if (captcha && !captcha.classList.contains('checked')) {
                 alert("🤖 Por favor, verifica que no eres un robot.");
                 return;
             }
+
+            // 2. Cambiar el texto del botón para dar feedback de que está procesando
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = "ENVIANDO...";
+            submitBtn.disabled = true; // Evitamos que hagan doble clic
             
-            alert("✅ ¡Mensaje enviado con éxito!");
-            contactForm.reset();
-            if(captcha) captcha.classList.remove('checked');
+            // 3. Preparar los datos y enviarlos silenciosamente
+            const formData = new FormData(contactForm);
+            
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: contactForm.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json' // Le pedimos a Formspree que no nos redirija
+                    }
+                });
+                
+                if (response.ok) {
+                    // ¡Éxito total!
+                    alert("✅ ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.");
+                    contactForm.reset(); // Vaciamos los campos de texto
+                    captcha.classList.remove('checked'); // Destildamos el captcha
+                } else {
+                    // Error del servidor
+                    alert("❌ Hubo un problema al enviar el mensaje. Por favor, revisa tus datos e intenta de nuevo.");
+                }
+            } catch (error) {
+                // Error de conexión (sin internet, etc.)
+                alert("❌ Error de red. Por favor, verifica tu conexión a internet.");
+            } finally {
+                // Pase lo que pase, restauramos el botón a su estado normal
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            }
         });
     }
 
