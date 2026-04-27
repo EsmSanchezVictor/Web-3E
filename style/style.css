@@ -328,6 +328,41 @@ html, body { background-color: var(--bg-dark); color: var(--text-white); font-fa
         visibility: hidden !important;
         pointer-events: none !important;
     }
+/* =========================================
+       REDISEÑO DE GALERÍA PARA MÓVIL (Estilo Swipe)
+       ========================================= */
+    
+    /* 1. Ocultamos el visor principal que ocupa mucho espacio */
+    .gallery-viewer {
+        display: none !important;
+    }
+
+    /* 2. Convertimos la grilla en un carrusel horizontal deslizable */
+    .thumbnail-grid {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory; /* Hace que frene exacto en cada foto */
+        gap: 15px;
+        padding-bottom: 20px;
+        -webkit-overflow-scrolling: touch; /* Movimiento fluido en iPhone */
+    }
+
+    /* 3. Cada foto ocupa casi toda la pantalla y se centra */
+    .thumb-item {
+        flex: 0 0 85%; /* Ocupa el 85% del ancho, dejando asomar la siguiente foto */
+        scroll-snap-align: center;
+        /* Apagamos el clic porque el visor grande ya no está */
+        pointer-events: none; 
+    }
+
+    /* 4. Ajustamos la altura de las imágenes para que se vean imponentes */
+    .thumb-item img {
+        height: 350px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
     
 }
 
