@@ -322,6 +322,12 @@ html, body { background-color: var(--bg-dark); color: var(--text-white); font-fa
         0%, 100% { transform: translateY(0); opacity: 0.5; }
         50% { transform: translateY(8px); opacity: 1; }
     }
+    /* ELIMINAR FLECHAS DE SALTO EN CELULAR */
+    .scroll-down-arrow {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
     
 }
 
