@@ -1,3 +1,4 @@
+.mobile-caption { display: none; }
 /* =========================================
    1. VARIABLES Y CONFIGURACIÓN BASE
    ========================================= */
@@ -329,7 +330,7 @@ html, body { background-color: var(--bg-dark); color: var(--text-white); font-fa
     pointer-events: none !important;
 }
 /* =========================================
-       REDISEÑO DE GALERÍA PARA MÓVIL (Anula el 3D)
+       REDISEÑO DE GALERÍA PARA MÓVIL (Scroll Vertical Estilo Reels)
        ========================================= */
     
     /* 1. Ocultamos el visor principal, flechas y textos de ayuda */
@@ -339,46 +340,85 @@ html, body { background-color: var(--bg-dark); color: var(--text-white); font-fa
         display: none !important;
     }
 
-    /* 2. Desactivamos el entorno 3D de los contenedores */
+    /* 2. Desactivamos el 3D y le damos una altura cómoda a la pantalla */
     .carousel-3d-wrapper,
     .carousel-3d-container {
         perspective: none !important;
-        height: auto !important;
-        margin-top: 20px !important;
+        width: 100% !important; 
+        height: 75vh !important; /* Altura del contenedor en la pantalla */
+        margin-top: 10px !important;
+        position: relative !important;
+        display: block !important;
     }
 
-    /* 3. Convertimos el anillo 3D en una fila horizontal deslizable */
+    /* 3. Convertimos el contenedor en una COLUMNA VERTICAL */
     .carousel-3d {
-        transform: none !important; /* Anula la rotación del JS */
+        position: relative !important;
+        transform: none !important;
         transform-style: flat !important;
         display: flex !important;
-        overflow-x: auto !important;
-        scroll-snap-type: x mandatory;
-        gap: 15px;
-        padding-bottom: 20px;
+        flex-direction: column !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        scroll-snap-type: y mandatory;
+        gap: 30px !important; /* Espacio entre fotos */
+        padding: 10vh 0 !important; /* Margen interno para que la primera foto no quede pegada arriba */
         width: 100% !important;
+        height: 100% !important;
         -webkit-overflow-scrolling: touch;
     }
 
-    /* 4. Acomodamos cada foto para que ocupe el centro de la pantalla */
+    /* 4. LA CLAVE DEL TAMAÑO Y EL SÚPER NEÓN */
     .carousel-cell {
-        position: relative !important; /* Quita el absolute del 3D */
-        transform: none !important; /* Quita la posición 3D individual */
-        flex: 0 0 85% !important; /* Ocupa el 85% de la pantalla */
-        width: auto !important;
-        height: 350px !important;
+        position: relative !important;
+        transform: none !important;
+        flex: 0 0 55% !important;
+        width: 90% !important;
+        margin: 0 auto !important;
+        height: auto !important;
         scroll-snap-align: center;
         opacity: 1 !important; 
-        pointer-events: none !important; /* Evita que el JS quiera hacer clic */
+        pointer-events: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        
+        /* Pasamos el neón al contenedor y lo hacemos MÁS FUERTE */
+        border-radius: 20px !important;
+        box-shadow: 0 0 5px rgba(168, 85, 247, 0.9), 
+                    0 0 15px rgba(168, 85, 247, 0.6),
+                    0 0 25px rgba(168, 85, 247, 0.3) !important;
+        
+        /* Necesario para que el texto no se salga de los bordes curvos */
+        overflow: hidden !important; 
     }
 
+    /* 5. IMAGEN SIN BORDES */
     .carousel-cell img {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-        border-radius: 15px !important;
+        border-radius: 20px !important;
+        border: none !important;
     }
 
+    /* 6. DISEÑO DEL TEXTO DESCRIPTIVO (Estilo Zócalo) */
+    .mobile-caption {
+        display: block !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        /* Fondo en degradé negro transparente para que el texto se lea siempre */
+        background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 50%, transparent 100%) !important;
+        color: #ffffff !important;
+        padding: 40px 15px 20px !important; /* Espacio para que respire */
+        text-align: center !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        text-shadow: 2px 2px 4px #000000 !important;
+    }
 }
 
 @media (max-height: 850px) {

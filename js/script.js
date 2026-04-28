@@ -263,4 +263,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+// 11. GENERAR ZÓCALOS DE TEXTO EN GALERÍA MÓVIL AUTOMÁTICAMENTE
+    const cells = document.querySelectorAll('.carousel-cell');
+    
+    cells.forEach(cell => {
+        const onclickAttr = cell.getAttribute('onclick');
+        if (onclickAttr && onclickAttr.includes("changeImage")) {
+            // Buscamos el texto que pusiste entre comillas en el changeImage
+            const match = onclickAttr.match(/changeImage\('.*?',\s*'(.*?)'\s*\)/);
+            
+            if (match && match[1]) {
+                const textoDescripcion = match[1];
+                
+                // Creamos el zócalo negro con el texto
+                const caption = document.createElement('div');
+                caption.className = 'mobile-caption';
+                caption.innerText = textoDescripcion;
+                
+                // Lo metemos adentro de la foto
+                cell.appendChild(caption);
+            }
+        }
+    });
 });
