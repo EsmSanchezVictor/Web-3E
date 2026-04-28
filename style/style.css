@@ -270,100 +270,115 @@ html, body { background-color: var(--bg-dark); color: var(--text-white); font-fa
    12. RESPONSIVE Y MEDIA QUERIES
    ========================================= */
 @media (max-width: 768px) {
-    .navbar { padding: 15px 20px; }
-    
-    /* MENÚ HAMBURGUESA BLINDADO */
-    .mobile-menu-btn { display: block; background: none; border: none; color: var(--text-white); font-size: 1.5rem; cursor: pointer; z-index: 1100; }
-    .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(15px); flex-direction: column; padding: 20px 0; border-bottom: 1px solid rgba(168, 85, 247, 0.3); }
-    
-    /* El !important obliga a que el menú aparezca sí o sí */
-    .nav-links.active { display: flex !important; }
-    
-    .nav-links a { padding: 15px 0; width: 100%; text-align: center; margin-left: 0; }
-    
-    .hero-title { font-size: 1.2rem !important; }
-    .about-container, .footer-container, .contact-wrapper { flex-direction: column; }
-    .about-image { order: -1; margin-bottom: 30px; }
-    .mission-vision-grid { flex-direction: column; }
-    .courses-section, .impact-section, .about-section, .gallery-section, .contact-page-section { padding: 120px 20px 60px 20px; }
-    .main-viewer { height: 300px; }
-    .action-card { width: 100%; }
-    /* =========================================
-       Indicador Lateral de Scroll (Solo Móvil)
-       ========================================= */
-    .mobile-scroll-indicator {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: fixed;
-        right: 15px;      /* Pegado al borde derecho */
-        bottom: 20%;      /* En la parte baja de la pantalla */
-        z-index: 1000;
-        transition: opacity 0.5s ease;
-        pointer-events: none; /* Evita que moleste si el usuario toca ahí por error */
-    }
-    
-    .indicator-line {
-        width: 2px;
-        height: 60px;
-        background: linear-gradient(to bottom, transparent, var(--neon-purple));
-        border-radius: 2px;
-        margin-bottom: 5px;
-    }
-    
-    .mobile-scroll-indicator i {
-        color: var(--neon-purple);
-        font-size: 0.9rem;
-        text-shadow: 0 0 10px rgba(168, 85, 247, 0.8);
-        animation: subtleDrop 2s infinite ease-in-out;
-    }
-    
-    @keyframes subtleDrop {
-        0%, 100% { transform: translateY(0); opacity: 0.5; }
-        50% { transform: translateY(8px); opacity: 1; }
-    }
-    /* ELIMINAR FLECHAS DE SALTO EN CELULAR */
-    .scroll-down-arrow {
-        display: none !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-    }
+.navbar { padding: 15px 20px; }
+
+/* MENÚ HAMBURGUESA BLINDADO */
+.mobile-menu-btn { display: block; background: none; border: none; color: var(--text-white); font-size: 1.5rem; cursor: pointer; z-index: 1100; }
+.nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(15px); flex-direction: column; padding: 20px 0; border-bottom: 1px solid rgba(168, 85, 247, 0.3); }
+
+/* El !important obliga a que el menú aparezca sí o sí */
+.nav-links.active { display: flex !important; }
+
+.nav-links a { padding: 15px 0; width: 100%; text-align: center; margin-left: 0; }
+
+.hero-title { font-size: 1.2rem !important; }
+.about-container, .footer-container, .contact-wrapper { flex-direction: column; }
+.about-image { order: -1; margin-bottom: 30px; }
+.mission-vision-grid { flex-direction: column; }
+.courses-section, .impact-section, .about-section, .gallery-section, .contact-page-section { padding: 120px 20px 60px 20px; }
+.main-viewer { height: 300px; }
+.action-card { width: 100%; }
 /* =========================================
-       REDISEÑO DE GALERÍA PARA MÓVIL (Estilo Swipe)
+   Indicador Lateral de Scroll (Solo Móvil)
+   ========================================= */
+.mobile-scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    right: 15px;      /* Pegado al borde derecho */
+    bottom: 20%;      /* En la parte baja de la pantalla */
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+    pointer-events: none; /* Evita que moleste si el usuario toca ahí por error */
+}
+
+.indicator-line {
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--neon-purple));
+    border-radius: 2px;
+    margin-bottom: 5px;
+}
+
+.mobile-scroll-indicator i {
+    color: var(--neon-purple);
+    font-size: 0.9rem;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.8);
+    animation: subtleDrop 2s infinite ease-in-out;
+}
+
+@keyframes subtleDrop {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(8px); opacity: 1; }
+}
+/* ELIMINAR FLECHAS DE SALTO EN CELULAR */
+.scroll-down-arrow {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+/* =========================================
+       REDISEÑO DE GALERÍA PARA MÓVIL (Anula el 3D)
        ========================================= */
     
-    /* 1. Ocultamos el visor principal que ocupa mucho espacio */
-    .gallery-viewer {
+    /* 1. Ocultamos el visor principal, flechas y textos de ayuda */
+    .main-viewer,
+    .side-arrow,
+    .gallery-instruction {
         display: none !important;
     }
 
-    /* 2. Convertimos la grilla en un carrusel horizontal deslizable */
-    .thumbnail-grid {
+    /* 2. Desactivamos el entorno 3D de los contenedores */
+    .carousel-3d-wrapper,
+    .carousel-3d-container {
+        perspective: none !important;
+        height: auto !important;
+        margin-top: 20px !important;
+    }
+
+    /* 3. Convertimos el anillo 3D en una fila horizontal deslizable */
+    .carousel-3d {
+        transform: none !important; /* Anula la rotación del JS */
+        transform-style: flat !important;
         display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory; /* Hace que frene exacto en cada foto */
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory;
         gap: 15px;
         padding-bottom: 20px;
-        -webkit-overflow-scrolling: touch; /* Movimiento fluido en iPhone */
+        width: 100% !important;
+        -webkit-overflow-scrolling: touch;
     }
 
-    /* 3. Cada foto ocupa casi toda la pantalla y se centra */
-    .thumb-item {
-        flex: 0 0 85%; /* Ocupa el 85% del ancho, dejando asomar la siguiente foto */
+    /* 4. Acomodamos cada foto para que ocupe el centro de la pantalla */
+    .carousel-cell {
+        position: relative !important; /* Quita el absolute del 3D */
+        transform: none !important; /* Quita la posición 3D individual */
+        flex: 0 0 85% !important; /* Ocupa el 85% de la pantalla */
+        width: auto !important;
+        height: 350px !important;
         scroll-snap-align: center;
-        /* Apagamos el clic porque el visor grande ya no está */
-        pointer-events: none; 
+        opacity: 1 !important; 
+        pointer-events: none !important; /* Evita que el JS quiera hacer clic */
     }
 
-    /* 4. Ajustamos la altura de las imágenes para que se vean imponentes */
-    .thumb-item img {
-        height: 350px;
-        object-fit: cover;
-        border-radius: 15px;
+    .carousel-cell img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: 15px !important;
     }
-    
+
 }
 
 @media (max-height: 850px) {
