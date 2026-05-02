@@ -257,7 +257,7 @@ html, body { background-color: var(--bg-dark); color: var(--text-white); font-fa
 .contact-list { list-style: none; }
 .contact-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; color: var(--text-gray); }
 .contact-list i { color: var(--neon-blue); }
-.footer-bottom { text-align: center; padding: 20px; border-top: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+.footer-bottom { text-align: center; padding: 20px; border-top: 1px solid rgba(255,255,255,0.05); color: rgba(130, 103, 103, 0.811); font-size: 0.8rem; }
 .mt-20 { margin-top: 20px; }
 
 /* =========================================
