@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta property="og:title" content="3Esfera | Hub de Innovación">
     <meta property="og:description" content="Impulsamos el talento y transformamos el futuro. Conocé nuestros trayectos formativos y servicios.">
-    <meta property="og:image" content="https://3esfera.com.ar/assets/tu-imagen-de-portada.jpg">
+    <meta property="og:image" content="https://3esfera.com.ar/assets/tu-imagen-de-portada.webp">
     <meta property="og:url" content="https://3esfera.com.ar/">
     <link rel="icon" type="image/png" href="./assets/logo_youtube_3esfera.png">
+    <meta name="description" content="Explorá la galería de imágenes de 3Esfera. Reviví nuestros eventos, talleres y el ecosistema de innovación.">
 </head>
 <body>
     <div class="background-glow">
@@ -38,12 +39,12 @@
             <i class="fas fa-bars"></i>
         </button>
     </nav>
-
+    <main>
     <section class="gallery-page-section page-padding">
 
         
         <div class="main-viewer scroll-animate" onclick="openModal()">
-            <img id="main-display" src="./assets/foto1.jpg" onerror="this.src='https://placehold.co/800x500/111/333?text=Selecciona+una+imagen'" alt="Visor Principal">
+            <!-- <img id="main-display" src="./assets/foto1.jpg" onerror="this.src='https://placehold.co/800x500/111/333?text=Selecciona+una+imagen'" alt="Visor Principal"> -->
             <div class="viewer-overlay">
                 <h3 id="viewer-title">Haz clic para ampliar</h3>
             </div>
@@ -56,26 +57,26 @@
 
             <div class="carousel-3d-container">
                 <div class="carousel-3d" id="carousel3D">
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_b.jpg', 'Campus Party: Panel sobre diseño para emprendimientos de la economía del conocimiento.')"><img src="./galeria/Foto_b.jpg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_ah.jpg', 'Jornada de innovación ENET n° 100.')"><img src="./galeria/Foto_ah.jpg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_bf.jpeg', 'Jornada CDE con estudiantes')"><img src="./galeria/Foto_bf.jpeg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_e.jpg', 'Club de Emprendedores: Curso Emprendedurismo, Municipio de Crespo')"><img src="./galeria/Foto_e.jpg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_bg.jpg', 'Reconocimiento MinCyt de Nación, Agencia IDI - Programa Tecnotecas')"><img src="./galeria/Foto_bg.jpg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_az.jpg', 'Charla Politicas publicas para jovenes')"><img src="./galeria/Foto_az.jpg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_ai.jpg', 'ConerTech: Participación como jurados de proyectos Hackaton.')"><img src="./galeria/Foto_ai.jpg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_ay.jpg', 'Club de Emprendedores: Curso Emprendedurismo, Municipios de Aranguren y Hernandez')"><img src="./galeria/Foto_ay.jpg"></div>                                        
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_u.jpg', 'Jornada mujeres en acción Municipalidad Maria Grande teller de empredndedurismo')"><img src="./galeria/Foto_u.jpg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_ao.jpeg', 'Scouts Paraná: Jornada de formación Relevamiento de accesibilidad edilicia ')"><img src="./galeria/Foto_ao.jpeg"></div>                                        
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_x3.jpeg', 'Semana de la Ciencia: disertación sobre innovación abierta – FCG (UADER)')"><img src="./galeria/Foto_x3.jpeg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_be.jpeg', 'Jornada Para estudiantes CDE')"><img src="./galeria/Foto_be.jpeg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_x.jpg', 'Rover Moot Scouts Interamericano: taller sobre trabajo en equipo y liderazgo')"><img src="./galeria/Foto_x.jpg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_w.jpg', 'Charla: Oportunidades para emprendedores y turismo accesible – FCG (UADER) ')"><img src="./galeria/Foto_w.jpg"></div>                                                                                                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_1.jpg', 'Teller sobre emprendimientos de la economia del conocimiento - I.P.E.T Juan XXIII')"><img src="./galeria/Foto_1.jpg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/foto_dc.jpeg', 'Distrito del Conocimiento: Acompañamiento Jornada de formacón - Subsecretaría CyT Paraná')"><img src="./galeria/foto_dc.jpeg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_ae.jpg', 'Tutoria: Argentina Programa - Min. de Economía de la Nación')"><img src="./galeria/Foto_ae.jpg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/foto_glo.jpeg', 'Cierre Concejo deliberante estudiantil taller Rol de concejales' )"><img src="./galeria/foto_glo.jpeg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_an.jpeg', 'Coordinacion de equipo: Programa Mujeres que Transforman - Coca-Cola FEMSA Argentina' )"><img src="./galeria/Foto_an.jpeg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_x5.jpg', 'Acuerdo de colaboración con la Dirección de Emprendedurismo del Municipio de Quilmes – Buenos Aires')"><img src="./galeria/Foto_x5.jpg"></div>
-                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_x6.jpeg', 'INES CONICET-UNER: Proyecto Fortalecimiento de Habilidades Personales y Gestión El Aromo. Reconquista - Santa Fé ')"><img src="./galeria/Foto_x6.jpeg"></div>                                                                                                    
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_b.webp', 'Campus Party: Panel sobre diseño para emprendimientos de la economía del conocimiento.')"><img src="./galeria/Foto_b.webp" alt="Campus Party: Panel sobre diseño para emprendimientos de la economía del conocimiento."></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_ah.webp', 'Jornada de innovación ENET n° 100.')"><img src="./galeria/Foto_ah.webp" alt="Jornada de innovación ENET n° 100."></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_bf.webp', 'Jornada CDE con estudiantes')"><img src="./galeria/Foto_bf.webp" alt="Jornada CDE con estudiantes"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_e.webp', 'Club de Emprendedores: Curso Emprendedurismo, Municipio de Crespo')"><img src="./galeria/Foto_e.webp" alt="Club de Emprendedores: Curso Emprendedurismo, Municipio de Crespo"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_bg.webp', 'Reconocimiento MinCyt de Nación, Agencia IDI - Programa Tecnotecas')"><img src="./galeria/Foto_bg.webp" alt="Reconocimiento MinCyt de Nación, Agencia IDI - Programa Tecnotecas"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_az.webp', 'Charla Politicas publicas para jovenes')"><img src="./galeria/Foto_az.webp" alt="Charla Politicas publicas para jovenes"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_ai.webp', 'ConerTech: Participación como jurados de proyectos Hackaton')"><img src="./galeria/Foto_ai.webp" alt="ConerTech: Participación como jurados de proyectos Hackaton"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_ay.webp', 'Club de Emprendedores: Curso Emprendedurismo, Municipios de Aranguren y Hernandez')"><img src="./galeria/Foto_ay.webp" alt="Club de Emprendedores: Curso Emprendedurismo, Municipios de Aranguren y Hernandez"></div>                                        
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_u.webp', 'Jornada mujeres en acción Municipalidad Maria Grande teller de empredndedurismo')"><img src="./galeria/Foto_u.webp" alt="Jornada mujeres en acción Municipalidad Maria Grande teller de empredndedurismo"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_ao.webp', 'Scouts Paraná: Jornada de formación Relevamiento de accesibilidad edilicia')"><img src="./galeria/Foto_ao.webp" alt="Scouts Paraná: Jornada de formación Relevamiento de accesibilidad edilicia"></div>                                        
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_x3.webp', 'Semana de la Ciencia: disertación sobre innovación abierta – FCG (UADER)')"><img src="./galeria/Foto_x3.webp" alt="Semana de la Ciencia: disertación sobre innovación abierta – FCG (UADER)"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_be.webp', 'Jornada Para estudiantes CDE')"><img src="./galeria/Foto_be.webp" alt="Jornada Para estudiantes CDE"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_x.webp', 'Rover Moot Scouts Interamericano: taller sobre trabajo en equipo y liderazgo')"><img src="./galeria/Foto_x.webp" alt="Rover Moot Scouts Interamericano: taller sobre trabajo en equipo y liderazgo"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_w.webp', 'Charla: Oportunidades para emprendedores y turismo accesible – FCG (UADER)')"><img src="./galeria/Foto_w.webp" alt="Charla: Oportunidades para emprendedores y turismo accesible – FCG (UADER)"></div>                                                                                                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_1.webp', 'Teller sobre emprendimientos de la economia del conocimiento - I.P.E.T Juan XXIII')"><img src="./galeria/Foto_1.webp"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/foto_dc.webp', 'Distrito del Conocimiento: Acompañamiento Jornada de formacón - Subsecretaría CyT Paraná')"><img src="./galeria/foto_dc.webp" alt="Distrito del Conocimiento: Acompañamiento Jornada de formacón - Subsecretaría CyT Paraná"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_ae.webp', 'Tutoria: Argentina Programa - Min. de Economía de la Nación')"><img src="./galeria/Foto_ae.webp" alt="Tutoria: Argentina Programa - Min. de Economía de la Nación"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/foto_glo.webp', 'Cierre Concejo deliberante estudiantil taller Rol de concejales' )"><img src="./galeria/foto_glo.webp" alt="Cierre Concejo deliberante estudiantil taller Rol de concejales"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_an.webp', 'Coordinacion de equipo: Programa Mujeres que Transforman - Coca-Cola FEMSA Argentina' )"><img src="./galeria/Foto_an.webp" alt="Coordinacion de equipo: Programa Mujeres que Transforman - Coca-Cola FEMSA Argentina"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_x5.webp', 'Acuerdo de colaboración con la Dirección de Emprendedurismo del Municipio de Quilmes – Buenos Aires')"><img src="./galeria/Foto_x5.webp" alt="Acuerdo de colaboración con la Dirección de Emprendedurismo del Municipio de Quilmes – Buenos Aires"></div>
+                    <div class="carousel-cell" onclick="event.stopPropagation(); changeImage('./galeria/Foto_x6.webp', 'INES CONICET-UNER: Proyecto Fortalecimiento de Habilidades Personales y Gestión El Aromo. Reconquista - Santa Fé')"><img src="./galeria/Foto_x6.webp" alt="INES CONICET-UNER: Proyecto Fortalecimiento de Habilidades Personales y Gestión El Aromo. Reconquista - Santa Fé"></div>                                                                                                    
                 </div>
             </div>
 
@@ -93,7 +94,7 @@
         <img class="modal-content" id="img01">
         <div id="caption"></div>
     </div>
-
+    </main>
     <footer class="footer-section">
         <div class="footer-container">
             <div class="footer-col">
