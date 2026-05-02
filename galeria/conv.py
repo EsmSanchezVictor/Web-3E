@@ -1,43 +1,38 @@
 import os
 from PIL import Image
 
-def convertir_png_a_webp_transparente(carpeta_origen, carpeta_destino):
-    # Crea la carpeta de destino si no existe
-    if not os.path.exists(carpeta_destino):
-        os.makedirs(carpeta_destino)
+def optimizar_webp(directorio_entrada, porcentaje_reduccion=0.70):
+    # Extensiones a procesar
+    extension = ".webp"
+    
+    # Verificar si el directorio existe
+    if not os.path.exists(directorio_entrada):
+        print(f"La carpeta {directorio_entrada} no existe.")
+        return
 
-    # Recorre todos los archivos en la carpeta de origen
-    for nombre_archivo in os.listdir(carpeta_origen):
-        if nombre_archivo.lower().endswith(".jpeg"):
-            ruta_entrada = os.path.join(carpeta_origen, nombre_archivo)
+    # Recorrer archivos en la carpeta
+    for archivo in os.listdir(directorio_entrada):
+        if archivo.lower().endswith(extension):
+            ruta_completa = os.path.join(directorio_entrada, archivo)
             
-            # Crea el nuevo nombre de archivo cambiando la extensión a .webp
-            nombre_sin_ext = os.path.splitext(nombre_archivo)[0]
-            nombre_salida = f"{nombre_sin_ext}.webp"
-            ruta_salida = os.path.join(carpeta_destino, nombre_salida)
-
             try:
-                # Abre la imagen
-                with Image.open(ruta_entrada) as img:
-                    # Convertir a RGBA asegura que se mantenga la transparencia (el canal Alfa)
-                    img = img.convert("RGBA")
+                with Image.open(ruta_completa) as img:
+                    # Calcular nuevas dimensiones (manteniendo relación de aspecto)
+                    ancho_original, alto_original = img.size
+                    nuevo_ancho = int(ancho_original * porcentaje_reduccion)
+                    nuevo_alto = int(alto_original * porcentaje_reduccion)
                     
-                    # Guarda la imagen. 'lossless=True' mantiene la calidad exacta, 
-                    # si prefieres que pese menos, puedes quitar lossless y usar quality=90
-                    img.save(ruta_salida, format="webp", lossless=True)
+                    # Redimensionar
+                    img_redimensionada = img.resize((nuevo_ ancho, nuevo_alto), Image.LANCZOS)
                     
-                print(f"Éxito: {nombre_archivo} -> {nombre_salida}")
-                
+                    # Sobrescribir el archivo original con la versión reducida
+                    img_redimensionada.save(ruta_completa, "webp", quality=80)
+                    print(f"Optimizado: {archivo} ({nuevo_ancho}x{nuevo_alto})")
+                    
             except Exception as e:
-                print(f"Error al procesar {nombre_archivo}: {e}")
+                print(f"Error procesando {archivo}: {e}")
 
-# --- Configuración y ejecución ---
-
-# Escribe aquí la ruta de tu carpeta con los PNG
-carpeta_png = "../galeria" 
-
-# Escribe aquí dónde quieres que se guarden los WebP
-carpeta_webp = "../galeria" 
-
-# Ejecuta la función
-convertir_png_a_webp_transparente(carpeta_png, carpeta_webp)
+# Uso del script
+# Cambia 'assets' por la ruta de tu carpeta de imágenes
+ruta_assets = "../galeria" 
+optimizar_webp(ruta_assets)
